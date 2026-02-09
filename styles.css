@@ -65,15 +65,6 @@ details {
   transform: translateY(-5px);
 }
 
-.categoria img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.categoria h3 {
-  margin: 10px;
-}
 
 .categoria p {
   margin: 0 10px 15px;
@@ -81,20 +72,41 @@ details {
   color: #ccc;
 }
 
+.categoria {
+  min-width: 240px;
+  background: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.categoria img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.categoria h3 {
+  padding: 12px;
+  font-size: 1.1rem;
+}
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 
 .galeria img {
   width: 100%;
-  border-radius: 10px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 10px;
 }
-
 
 
 .hero {
@@ -130,6 +142,27 @@ details {
   font-weight: bold;
 }
 
+
+
+.slider {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.categoria {
+  min-width: 180px;
+  background: #1c1c1c;
+  color: white;
+  text-decoration: none;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
 
 
 
@@ -169,11 +202,6 @@ details li {
 }
 
 
-background-image:
-  linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-  url("img/fondo.jpg");
-
-
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -207,4 +235,57 @@ footer {
   padding: 20px;
   background: #000;
   font-size: 14px;
+}
+.slider-categorias {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-categorias .categoria {
+  min-width: 240px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+
+.carrusel:hover .carrusel-track {
+  animation-play-state: paused;
+}
+
+.carrusel {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: carrusel 7s infinite;
+}
+
+@keyframes carrusel {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-300px);
+  }
+
+  70% {
+    transform: translateX(-300px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
