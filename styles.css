@@ -289,3 +289,10 @@ footer {
     transform: translateX(0);
   }
 }
+.promo-top {
+  background: #e63946;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+}
